@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Bee : MonoBehaviour
 {
-    public float speed = 0.1f;
-    public float steerSpeed = 2f;
+    [SerializeField] float speed = 0.1f;
+    [SerializeField] float steerSpeed = 12f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,9 @@ public class Bee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, steerSpeed);   
-        transform.Translate(0,speed,0); 
+        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed;
+        float moveAmount = Input.GetAxis("Vertical") * speed;
+        transform.Rotate(0, 0, -steerAmount);   
+        transform.Translate(0,moveAmount,0); 
     }
 }
