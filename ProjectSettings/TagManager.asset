@@ -7,6 +7,8 @@ TagManager:
   - Package
   - Dropoff
   - Hive
+  - Boost
+  - Slow
   layers:
   - Default
   - TransparentFX
