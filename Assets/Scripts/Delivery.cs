@@ -14,9 +14,10 @@ public class Delivery : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Package"){
+        if (other.tag == "Package" && hasHoney == false){
             Debug.Log("picked up Honey!");
             hasHoney = true;
+            Destroy(other.gameObject, 0f);
         }
 
         if (other.tag == "Hive" && hasHoney == true){
